@@ -7,12 +7,12 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/ayushkzz/lab12-gradle.git'
+                checkout scm
             }
         }
         stage('Build & Test') {
             steps {
-                sh './gradlew clean test'
+                bat './gradlew clean test'
             }
         }
     }
